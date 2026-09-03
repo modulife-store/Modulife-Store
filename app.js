@@ -1,6 +1,6 @@
 // 1. Products Data
 const products = [
-  { name: "URAPRA Glycolic Acid 7% Toner", cat: "beauty", price: 1500, old: 2000, rating: 4.8, badge: "-25%", label: "GLYCOLIC TONER", new: true, img: "./images/Toner URAPRA Glycolic Acid 7% Toner.jpg" },
+  { name: "URAPRA Glycolic Acid 7% Toner", cat: "beauty", price: 1500, old: 2000, rating: 4.8, badge: "-25%", label: "GLYCOLIC TONER", new: true, img:"./images/Toner URAPRA Glycolic Acid 7% Toner.jpg" },
   { name: "Vitamin C Serum 30ml", cat: "beauty", price: 2500, old: 3125, rating: 4.6, badge: "-20%", label: "VITAMIN C", img: "./images/Vitamin C Serum 30ml.jpg" },
   { name: "Hyaluronic Acid Moisturizer", cat: "beauty", price: 1800, old: 2118, rating: 4.9, badge: "-15%", label: "HYDRATION", img: "./images/Hyaluronic Acid Moisturizer.jpeg" },
   { name: "Niacinamide Face Wash", cat: "beauty", price: 800, old: null, rating: 4.7, badge: "BEST", label: "FACE WASH", img: "./images/Niacinamide Face Wash.jpg" },
