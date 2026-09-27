@@ -1,0 +1,1587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modulife Store | Beauty, Fashion & Lifestyle</title>
+  <meta name="description" content="Shop beauty, skincare, fashion, personal care and lifestyle essentials at Modulife Store. Cash on delivery and Pakistan-wide delivery.">
+  <meta name="theme-color" content="#1a2332">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<!-- Modulife Promise Section & Cart Modal CSS -->
+  <style>
+    .modulife-section {
+      width: 100%;
+      background: #080f1b;
+      color: #fff;
+      padding-top: 55px;
+      padding-bottom: 55px;
+      display: grid;
+      grid-template-columns: minmax(280px, 0.95fr) minmax(520px, 1.45fr);
+      gap: 45px;
+      font-family: Arial, sans-serif;
+    }
+
+    .promise-content {
+      padding-top: 10px;
+    }
+
+    .small-title {
+      color: #cda968;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 2px;
+    }
+
+    .promise-content h1 {
+      font-size: 48px;
+      line-height: 1.1;
+      margin-top: 18px;
+      color: #f5f5f5;
+    }
+
+    .promise-content h1 em {
+      color: #d2a75f;
+      font-family: Georgia, serif;
+      font-weight: 500;
+    }
+
+    .gold-line {
+      width: 48px;
+      height: 3px;
+      background: #d2a75f;
+      margin: 20px 0 25px;
+    }
+
+    .promise-content > p {
+      color: #b9c0ca;
+      font-size: 18px;
+      line-height: 1.8;
+      max-width: 450px;
+    }
+
+    .trust-box {
+      margin-top: 35px;
+      border: 1px solid #253142;
+      border-radius: 12px;
+      padding: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      min-height: 140px;
+      background: linear-gradient(135deg, rgba(20,31,45,.8), rgba(9,17,29,.8));
+    }
+
+    .trust-info {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .shield-icon {
+      width: 58px;
+      height: 58px;
+      border: 3px solid #d2a75f;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #d2a75f;
+      font-size: 30px;
+      flex-shrink: 0;
+    }
+
+    .trust-info h3 {
+      font-size: 17px;
+      margin-bottom: 10px;
+    }
+
+    .trust-info p {
+      color: #b5bcc7;
+      font-size: 13px;
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    .rating {
+      border-left: 1px solid #344051;
+      padding-left: 24px;
+      min-width: 170px;
+    }
+
+    .stars {
+      color: #d2a75f;
+      font-size: 20px;
+      letter-spacing: 2px;
+      margin-bottom: 8px;
+    }
+
+    .rating p {
+      color: #d6d9de;
+      font-size: 14px;
+      margin: 0 0 7px;
+    }
+
+    .rating span {
+      color: #d2a75f;
+      font-size: 14px;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      width: 100%;
+      min-width: 0;
+    }
+
+    .feature-card {
+      position: relative;
+      min-width: 0;
+      min-height: 215px;
+      height: auto;
+      box-sizing: border-box;
+      border: 1px solid #263244;
+      border-radius: 10px;
+      padding: 16px;
+      display: grid;
+      grid-template-columns: 55px minmax(0, 1fr);
+      align-items: start;
+      gap: 14px;
+      overflow: hidden;
+      background: rgba(13, 23, 37, .8);
+      transition: .3s ease;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-4px);
+      border-color: #d2a75f;
+    }
+
+    .feature-number {
+      color: #d2a75f;
+      font-family: Georgia, serif;
+      font-size: 42px;
+      line-height: 1;
+      margin: 0;
+      min-width: 0;
+      z-index: 2;
+    }
+
+    .feature-content {
+      flex: none;
+      min-width: 0;
+      width: 100%;
+      z-index: 2;
+      box-sizing: border-box;
+    }
+
+    .feature-content h3 {
+      font-size: 19px;
+      line-height: 1.25;
+      margin: 0 0 8px;
+      color: #f2f2f2;
+      overflow-wrap: anywhere;
+    }
+
+    .feature-content p {
+      color: #adb7c4;
+      font-size: 14px;
+      line-height: 1.6;
+      max-width: none;
+      margin: 0;
+      overflow-wrap: anywhere;
+    }
+
+    .feature-content > img:not(.phone-img) {
+      width: 100%;
+      height: 92px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    .mini-line {
+      width: 28px;
+      height: 2px;
+      background: #d2a75f;
+      margin-bottom: 10px;
+    }
+
+    /* Phone screenshots: responsive and kept separate from text */
+    .phone-img {
+      position: absolute;
+      right: 8px;
+      bottom: 0;
+      width: 145px;
+      max-width: 42%;
+      height: auto;
+      max-height: 185px;
+      object-fit: contain;
+      object-position: bottom right;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    /* Give cards with phone screenshots enough room for text */
+    .feature-card:has(.phone-img) .feature-content {
+      padding-right: 105px;
+    }
+
+    @media (max-width: 1000px) {
+      .modulife-section {
+        grid-template-columns: 1fr;
+      }
+
+      .features-grid {
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .modulife-section {
+        grid-template-columns: 1fr;
+        padding-top: 35px;
+        padding-bottom: 35px;
+      }
+
+      .features-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+
+      .feature-card {
+        min-height: 0;
+        padding: 16px;
+        grid-template-columns: 48px minmax(0, 1fr);
+        gap: 12px;
+      }
+
+      .feature-number {
+        font-size: 36px;
+      }
+
+      .feature-content h3 {
+        font-size: 18px;
+      }
+
+      .feature-content p {
+        font-size: 14px;
+        line-height: 1.55;
+      }
+
+      .feature-content > img:not(.phone-img) {
+        height: auto;
+        max-height: 105px;
+        object-fit: cover;
+      }
+
+      .phone-img {
+        width: 120px;
+        max-width: 38%;
+        max-height: 165px;
+        right: 6px;
+        bottom: 0;
+      }
+
+      .feature-card:has(.phone-img) .feature-content {
+        padding-right: 82px;
+      }
+
+      .promise-content h1 {
+        font-size: 40px;
+      }
+
+      .trust-box {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .rating {
+        border-left: 0;
+        border-top: 1px solid #344051;
+        padding-left: 0;
+        padding-top: 18px;
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .feature-card {
+        grid-template-columns: 42px minmax(0, 1fr);
+        padding: 14px;
+        gap: 10px;
+      }
+
+      .feature-number {
+        font-size: 32px;
+      }
+
+      .feature-content h3 {
+        font-size: 17px;
+      }
+
+      .feature-content p {
+        font-size: 13px;
+      }
+
+      .phone-img {
+        width: 105px;
+        max-width: 35%;
+        max-height: 145px;
+      }
+
+      .feature-card:has(.phone-img) .feature-content {
+        padding-right: 72px;
+      }
+    }
+
+
+    /* Footer Social Media Icons */
+    .social-icons {
+      display: flex;
+      gap: 12px;
+      margin-top: 18px;
+      flex-wrap: wrap;
+    }
+
+    .social-icons a {
+      width: 42px;
+      height: 42px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid #cda968;
+      border-radius: 50%;
+      color: #ffffff;
+      font-size: 18px;
+      text-decoration: none;
+      transition: 0.3s ease;
+    }
+
+    .social-icons a:hover {
+      background: #cda968;
+      color: #080f1b;
+      transform: translateY(-4px);
+    }
+
+    /* Cart Modal & Overlay Styling */
+    .overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.75);
+      justify-content: center;
+      align-items: center;
+      z-index: 2000;
+    }
+    .overlay.open {
+      display: flex;
+    }
+    .modal {
+      background: #0d1725;
+      color: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      border: 1px solid #253142;
+      width: 90%;
+      max-width: 500px;
+      max-height: 85vh;
+      overflow-y: auto;
+      position: relative;
+    }
+    .modal-close {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      font-size: 28px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: #cda968;
+    }
+    .cart-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 15px;
+      border-bottom: 1px solid #253142;
+      padding-bottom: 15px;
+    }
+    .cart-thumb {
+      font-size: 26px;
+      margin-right: 15px;
+    }
+    .qty {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 5px;
+    }
+    .qty button {
+      padding: 3px 10px;
+      cursor: pointer;
+      border: 1px solid #cda968;
+      background: #1a2332;
+      color: #fff;
+      border-radius: 4px;
+      font-size: 16px;
+    }
+    .qty button:hover {
+      background: #cda968;
+      color: #080f1b;
+    }
+    .empty {
+      text-align: center;
+      color: #b9c0ca;
+      padding: 20px;
+    }
+    .modal-actions {
+      display: flex;
+      gap: 10px;
+      justify-content: flex-end;
+      margin-top: 20px;
+    }
+    .btn.primary {
+      background: #cda968;
+      color: #080f1b;
+      font-weight: bold;
+      padding: 10px 18px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .btn.outline {
+      background: transparent;
+      border: 2px solid #25D366;
+      color: #25D366;
+      font-weight: bold;
+      padding: 10px 18px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    /* Order Form Styling */
+    #orderForm input, 
+    #orderForm textarea {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 12px;
+      background: #1a2332;
+      border: 1px solid #253142;
+      border-radius: 6px;
+      color: #fff;
+      font-family: inherit;
+      box-sizing: border-box;
+    }
+    #orderForm input:focus, 
+    #orderForm textarea:focus {
+      border-color: #cda968;
+      outline: none;
+    }
+    #orderForm textarea {
+      resize: vertical;
+      min-height: 70px;
+    }
+  </style>
+
+<!-- MODULIFE PROFESSIONAL CART OVERRIDE -->
+<style>
+  /* Cart overlay */
+  #overlay.overlay{
+    display:none;
+    position:fixed;
+    inset:0;
+    width:100%;
+    height:100%;
+    padding:20px;
+    box-sizing:border-box;
+    background:rgba(5,10,16,.72);
+    backdrop-filter:blur(8px);
+    -webkit-backdrop-filter:blur(8px);
+    justify-content:center;
+    align-items:center;
+    z-index:99999;
+  }
+  #overlay.overlay.open{display:flex;}
+
+  /* Professional modal */
+  #overlay .modal{
+    width:min(900px,100%);
+    max-width:900px;
+    max-height:90vh;
+    overflow-y:auto;
+    box-sizing:border-box;
+    position:relative;
+    padding:30px 34px;
+    border:1px solid rgba(205,169,104,.22);
+    border-radius:20px;
+    background:#fff;
+    color:#15191b;
+    box-shadow:0 30px 90px rgba(0,0,0,.38);
+    animation:modulifeCartIn .25s ease;
+    font-family:Arial,sans-serif;
+  }
+
+  @keyframes modulifeCartIn{
+    from{opacity:0;transform:translateY(18px) scale(.98)}
+    to{opacity:1;transform:translateY(0) scale(1)}
+  }
+
+  #overlay .modal-close{
+    position:absolute;
+    top:18px;
+    right:22px;
+    width:38px;
+    height:38px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:0;
+    border:0;
+    background:transparent;
+    color:#20252a;
+    font-size:30px;
+    line-height:1;
+    cursor:pointer;
+    border-radius:50%;
+    transition:.2s ease;
+  }
+  #overlay .modal-close:hover{
+    background:#f3efe7;
+    color:#b28a45;
+    transform:rotate(90deg);
+  }
+
+  /* Cart title */
+  #overlay .modal h2{
+    margin:0 50px 5px 0;
+    color:#15191b;
+    font-size:30px;
+    line-height:1.2;
+    font-weight:750;
+    letter-spacing:-.4px;
+  }
+  #overlay .modal h2 + p{
+    margin:0 0 25px;
+    color:#777;
+    font-size:14px;
+  }
+
+  /* Existing cart rows */
+  #overlay .cart-row{
+    display:grid;
+    grid-template-columns:minmax(0,1fr) auto auto;
+    gap:20px;
+    align-items:center;
+    margin:0;
+    padding:22px 0;
+    border-top:1px solid #e9e9e9;
+    border-bottom:0;
+  }
+
+  #overlay .cart-row > div:first-child{
+    min-width:0;
+  }
+
+  #overlay .cart-thumb{
+    width:90px;
+    height:90px;
+    min-width:90px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    float:left;
+    margin:0 18px 0 0;
+    border-radius:14px;
+    background:#f5f1e9;
+    color:#777;
+    font-size:0;
+    overflow:hidden;
+    border:1px solid #eee6d8;
+  }
+
+  /* If the existing cart has an image, show it properly */
+  #overlay .cart-thumb img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+  }
+
+  #overlay .cart-row h3,
+  #overlay .cart-row h4,
+  #overlay .cart-row strong{
+    color:#171b1e;
+  }
+
+  #overlay .cart-row p{
+    color:#777;
+  }
+
+  #overlay .qty{
+    display:inline-flex;
+    align-items:center;
+    gap:0;
+    margin-top:12px;
+    border:1px solid #d6d6d6;
+    border-radius:9px;
+    overflow:hidden;
+    height:38px;
+  }
+
+  #overlay .qty button{
+    width:40px;
+    height:38px;
+    padding:0;
+    border:0;
+    border-radius:0;
+    background:#fafafa;
+    color:#222;
+    font-size:20px;
+    cursor:pointer;
+    transition:.2s ease;
+  }
+
+  #overlay .qty button:hover{
+    background:#f0eadf;
+    color:#9d773b;
+  }
+
+  #overlay .qty span,
+  #overlay .qty b{
+    min-width:38px;
+    text-align:center;
+    color:#222;
+    font-size:15px;
+  }
+
+  /* Price */
+  #overlay .cart-row .price,
+  #overlay .cart-row .cart-price{
+    color:#145c45;
+    font-size:19px;
+    font-weight:750;
+    white-space:nowrap;
+  }
+
+  /* Total */
+  #overlay .cart-total,
+  #overlay .total-row{
+    display:flex;
+    align-items:center;
+    justify-content:flex-end;
+    gap:14px;
+    padding:22px 0 20px;
+    border-top:1px solid #e9e9e9;
+    color:#444;
+  }
+
+  #overlay .cart-total strong,
+  #overlay .total-row strong{
+    color:#145c45;
+    font-size:27px;
+  }
+
+  #overlay .modal-actions{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:14px;
+    justify-content:stretch;
+    margin-top:0;
+    padding-top:4px;
+  }
+
+  #overlay .modal-actions .btn{
+    width:100%;
+    min-height:56px;
+    box-sizing:border-box;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:10px;
+    font-size:13px;
+    font-weight:750;
+    letter-spacing:.7px;
+    cursor:pointer;
+    transition:.22s ease;
+  }
+
+  #overlay .modal-actions .btn.primary{
+    background:#f8f5ee;
+    color:#222;
+    border:1.5px solid #cbb487;
+    padding:12px 18px;
+  }
+
+  #overlay .modal-actions .btn.primary:hover{
+    background:#cbb487;
+    color:#fff;
+    transform:translateY(-2px);
+  }
+
+  #overlay .modal-actions .btn.outline{
+    background:#145c45;
+    color:#fff;
+    border:1.5px solid #145c45;
+    padding:12px 18px;
+  }
+
+  #overlay .modal-actions .btn.outline:hover{
+    background:#0d4735;
+    border-color:#0d4735;
+    transform:translateY(-2px);
+    box-shadow:0 8px 20px rgba(20,92,69,.22);
+  }
+
+  #overlay .empty{
+    padding:45px 20px;
+    color:#777;
+    text-align:center;
+    font-size:16px;
+  }
+
+  /* Better mobile cart */
+  @media(max-width:650px){
+    #overlay.overlay{padding:12px;}
+    #overlay .modal{
+      width:100%;
+      max-height:92vh;
+      padding:22px 18px;
+      border-radius:17px;
+    }
+
+    #overlay .modal h2{font-size:25px;}
+    #overlay .modal h2 + p{font-size:13px;margin-bottom:15px;}
+
+    #overlay .cart-row{
+      grid-template-columns:1fr auto;
+      gap:12px;
+      padding:18px 0;
+    }
+
+    #overlay .cart-thumb{
+      width:72px;
+      height:72px;
+      min-width:72px;
+      margin-right:12px;
+    }
+
+    #overlay .cart-row .price,
+    #overlay .cart-row .cart-price{
+      font-size:16px;
+    }
+
+    #overlay .modal-actions{
+      grid-template-columns:1fr;
+      gap:10px;
+    }
+
+    #overlay .modal-actions .btn{
+      min-height:52px;
+    }
+
+    #overlay .cart-total strong,
+    #overlay .total-row strong{
+      font-size:23px;
+    }
+  }
+</style>
+
+</head>
+<body>
+  <div class="announcement"> Delivery Available In All Over Pakistan <span>•</span> Cash on Delivery <span>•</span> WhatsApp Support</div>
+
+  <header class="site-header">
+    <div class="header-main container">
+      <a class="brand" href="#home" aria-label="Modulife Store home">
+        <img src="Logo.png" alt="Modulife Store logo">
+        <span><b>MODULIFE</b><small>STORE</small></span>
+      </a>
+      <nav class="desktop-nav">
+        <a href="#home">Home</a><a href="#shop">Shop</a><a href="#beauty">Beauty</a>
+        <a href="#women">Women</a><a href="#men">Men</a><a href="#accessories">Accessories</a>
+        <a href="#new">New Arrivals</a><a href="#deals">Deals</a>
+      </nav>
+      <div class="header-actions">
+        <button onclick="openSearch()" aria-label="Search">⌕</button>
+        <button onclick="showAccount()" aria-label="Account">♙</button>
+        <button onclick="showWishlist()" aria-label="Wishlist">♡</button>
+        <button class="cart-btn" onclick="openCart()" aria-label="Cart">🛒<i id="cartCount">0</i></button>
+        <button class="mobile-menu" onclick="toggleMenu()">☰</button>
+      </div>
+    </div>
+    <div id="mobileNav" class="mobile-nav">
+      <a href="#home">Home</a><a href="#shop">Shop</a><a href="#beauty">Beauty & Skincare</a>
+      <a href="#women">Women's Fashion</a><a href="#men">Men's Fashion</a><a href="#accessories">Accessories</a>
+      <a href="#new">New Arrivals</a><a href="#deals">Deals & Offers</a>
+    </div>
+  </header>
+  
+  <main>
+   <section id="home" class="hero"> 
+      <div class="hero-slideshow">
+        <div class="slide slide-1"></div>
+        <div class="slide slide-2"></div>
+        <div class="slide slide-3"></div>
+      </div>
+      <div class="hero-copy">
+        <p class="eyebrow">MODULIFE STORE</p>
+        <h1>Redefine Your<br><em>Everyday.</em></h1>
+        <p>Beauty, fashion and lifestyle essentials — carefully selected for modern living.</p>
+        <div class="hero-actions"><a class="btn primary" href="#shop">SHOP NOW</a><a class="btn outline" href="#categories">EXPLORE COLLECTION</a></div>
+      </div>
+      <div class="hero-art">
+        <div class="hero-card card-one"><span>BEAUTY</span><b>Glow<br>with confidence.</b></div>
+        <div class="hero-card card-two"><span>STYLE</span><b>Everyday<br>essentials.</b></div>
+        <div class="hero-orb"></div>
+      </div>
+    </section>
+
+    <section class="trust container">
+      <a href="#shipping" class="trust-item trust-delivery">
+        <b>🚚 FAST DELIVERY</b><small>Pakistan-wide delivery</small>
+      </a>
+      <a href="#shop" class="trust-item trust-cod">
+        <b>💵 CASH ON DELIVERY</b><small>Pay when your order arrives</small>
+      </a>
+      <a href="#shop" class="trust-item trust-quality">
+        <b>✦ QUALITY PRODUCTS</b><small>Carefully selected products</small>
+      </a>
+      <a href="https://wa.me/923044637523" target="_blank" class="trust-item trust-support">
+        <b>💬 CUSTOMER SUPPORT</b><small>Fast help via WhatsApp</small>
+      </a>
+    </section>
+
+    <section id="categories" class="section container">
+      <div class="section-head"><div><p class="eyebrow">SHOP YOUR WAY</p><h2>Explore Categories</h2></div><a href="#shop" class="text-link">View all →</a></div>
+      <div class="category-grid">
+        <a href="#beauty" class="category"><div class="cat-art beauty-art">BEAUTY</div><h3>Beauty & Skincare</h3><p>Glow, care and everyday essentials.</p></a>
+        <a href="#women" class="category"><div class="cat-art women-art">WOMEN</div><h3>Women's Fashion</h3><p>Comfortable, tasteful everyday style.</p></a>
+        <a href="#men" class="category"><div class="cat-art men-art">MEN</div><h3>Men's Fashion</h3><p>Modern essentials for him.</p></a>
+        <a href="#personal" class="category"><div class="cat-art care-art">CARE</div><h3>Personal Care</h3><p>Simple routines made better.</p></a>
+        <a href="#accessories" class="category"><div class="cat-art acc-art">ACCESS</div><h3>Accessories</h3><p>Finishing touches that stand out.</p></a>
+        <a href="#lifestyle" class="category"><div class="cat-art life-art">LIFE</div><h3>Lifestyle Essentials</h3><p>Useful picks for modern living.</p></a>
+      </div>
+    </section>
+
+    <section id="shop" class="section alt">
+      <div class="container">
+        <div class="section-head"><div><p class="eyebrow">CURATED FOR YOU</p><h2>Customer Favorites</h2><p>Our most-loved products, carefully selected for you.</p></div><a href="#shop" class="text-link" onclick="filterProducts('all')">All products →</a></div>
+        <div class="toolbar"><div id="resultLabel">25 products</div><div><button class="filter-toggle" onclick="toggleFilters()">☷ Filters</button><select id="sortSelect" onchange="renderProducts()"><option value="featured">Featured</option><option value="newest">Newest</option><option value="low">Price: Low to High</option><option value="high">Price: High to Low</option><option value="rating">Top Rated</option></select></div></div>
+        <div class="shop-layout">
+          <aside id="filters" class="filters">
+            <h3>Filter Products</h3>
+            <label>Category</label>
+            <select id="categoryFilter" onchange="renderProducts()"><option value="all">All Categories</option><option value="beauty">Beauty & Skincare</option><option value="women">Women's Fashion</option><option value="men">Men's Fashion</option><option value="accessories">Accessories</option><option value="personal">Personal Care</option></select>
+            <label>Maximum Price</label><input id="priceFilter" type="range" min="500" max="5000" step="100" value="5000" oninput="document.getElementById('priceValue').textContent='Rs. '+Number(this.value).toLocaleString();renderProducts()"><div id="priceValue">Rs. 5,000</div>
+            <label>Minimum Rating</label><select id="ratingFilter" onchange="renderProducts()"><option value="0">Any rating</option><option value="4.5">4.5+</option><option value="4.7">4.7+</option><option value="4.8">4.8+</option></select>
+          </aside>
+          <div id="productGrid" class="product-grid"></div>
+        </div>
+      </div>
+    </section>
+
+ <div class="beauty-box">
+
+  <div class="slider">
+    <img src="images/beauty Poster 1.png" class="slide active">
+    <img src="images/beauty Poster 2.png" class="slide">
+    <img src="images/beauty Poster 3.png" class="slide">
+  </div>
+
+  <div class="beauty-content">
+    <small>BEAUTY & SKINCARE</small>
+
+    <h1>
+      Your Beauty,<br>
+      <i>Your Way.</i>
+    </h1>
+
+    <p>
+      Discover premium skincare and beauty essentials
+      curated for your everyday glow.
+    </p>
+<section id="beauty">
+  <!-- Your Beauty Products Here -->
+</section>
+    <a href="#beauty" class="beauty-btn">
+      SHOP BEAUTY
+    </a>
+  </div>
+
+</div>
+    <section id="women" class="section alt">
+      <div class="container"><div class="section-head"><div><p class="eyebrow">WOMEN'S COLLECTION</p><h2>Fashion & Comfort</h2><p>Quality essentials designed for everyday confidence.</p></div><a href="#shop" class="text-link" onclick="filterProducts('women')">Shop women →</a></div><div class="mini-grid" id="womenProducts"></div></div>
+    </section>
+
+    <section id="men" class="section container">
+      <div class="section-head"><div><p class="eyebrow">MEN'S COLLECTION</p><h2>Modern Essentials</h2><p>Fashion and accessories for the contemporary man.</p></div><a href="#shop" class="text-link" onclick="filterProducts('men')">Shop men →</a></div><div class="mini-grid" id="menProducts"></div>
+    </section>
+
+    <section id="personal" class="section alt">
+      <div class="container"><div class="section-head"><div><p class="eyebrow">PERSONAL CARE</p><h2>Simple. Useful. Everyday.</h2></div></div><div class="mini-grid" id="personalProducts"></div></div>
+    </section>
+
+    <section id="accessories" class="section container">
+      <div class="section-head"><div><p class="eyebrow">ACCESSORIES</p><h2>The Finishing Touch</h2></div></div><div class="mini-grid" id="accessoryProducts"></div>
+    </section>
+
+    <section id="new" class="section alt">
+      <div class="container"><div class="section-head"><div><p class="eyebrow">JUST ARRIVED</p><h2>New Arrivals</h2></div></div><div class="mini-grid" id="newProducts"></div></div>
+    </section>
+
+    <!-- Why Choose Modulife Section -->
+    <section class="modulife-section container">
+
+      <!-- LEFT SIDE -->
+      <div class="promise-content">
+
+        <span class="small-title">THE MODULIFE PROMISE</span>
+
+        <h1>
+          Why Choose<br>
+          <em>Modulife?</em>
+        </h1>
+
+        <div class="gold-line"></div>
+
+        <p>
+          We keep shopping simple: thoughtfully selected products,
+          clear pricing and support when you need it.
+        </p>
+
+        <!-- TRUST BOX -->
+        <div class="trust-box">
+          <div class="trust-info">
+            <div class="shield-icon">✓</div>
+            <div>
+              <h3>Trusted by Thousands</h3>
+              <p>Quality products, reliable delivery<br>
+                and customer-first service.</p>
+            </div>
+          </div>
+
+          <div class="rating">
+            <div class="stars">★★★★★</div>
+            <p>4.8/5 Average Rating</p>
+            <span>Across Pakistan</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- RIGHT SIDE -->
+      <div class="features-grid">
+
+        <!-- BOX 1 -->
+        <div class="feature-card">
+          <div class="feature-number">01</div>
+          <div class="feature-content">
+            <img src="images/01_lifestyle_image.png" alt="Carefully Selected">
+            <h3>Carefully Selected</h3>
+            <div class="mini-line"></div>
+            <p>Products chosen with quality and value in mind.</p>
+          </div>
+        </div>
+
+        <!-- BOX 2 -->
+        <div class="feature-card">
+          <div class="feature-number">02</div>
+          <div class="feature-content">
+            <img src="images/02_delivery_map.jpg" alt="Pakistan Delivery">
+            <h3>Pakistan-Wide Delivery</h3>
+            <div class="mini-line"></div>
+            <p>We make nationwide delivery part of the experience.</p>
+          </div>
+        </div>
+
+        <!-- BOX 3 -->
+        <div class="feature-card">
+          <div class="feature-number">03</div>
+          <div class="feature-content">
+            <h3>Easy Checkout</h3>
+            <div class="mini-line"></div>
+            <p>Simple ordering with <br> Cash on Delivery <br> available.</p>
+          </div>
+          <img class="phone-img" src="images/03_checkout_phone.png" alt="Easy Checkout">
+        </div>
+
+        <!-- BOX 4 -->
+        <div class="feature-card">
+          <div class="feature-number">04</div>
+          <div class="feature-content">
+            <h3>Fast Support</h3>
+            <div class="mini-line"></div>
+            <p>Chat with our team for <br> quick and personalized <br> support.</p>
+          </div>
+          <img class="phone-img" src="images/04_whatsapp_phone.jpg" alt="WhatsApp Support">
+        </div>
+
+      </div>
+
+    </section>
+
+    <section class="reviews section alt"><div class="container"><div class="section-head"><div><p class="eyebrow">CUSTOMER LOVE</p><h2>What Our Customers Say</h2></div></div><div class="review-grid">
+      <article><div>★★★★★</div><p>“Excellent quality and very smooth ordering experience. The product arrived as expected.”</p><b>Verified Customer</b></article>
+      <article><div>★★★★★</div><p>“The WhatsApp support was quick and helpful. I will definitely shop again.”</p><b>Verified Customer</b></article>
+      <article><div>★★★★★</div><p>“Good prices, neat packaging and fast delivery. Modulife feels very professional.”</p><b>Verified Customer</b></article>
+    </div></div></section>
+
+    <section class="newsletter container"><div><p class="eyebrow">STAY IN THE LOOP</p><h2>Join Modulife</h2><p>Get new arrivals and exclusive deals first.</p></div><form onsubmit="subscribe(event)"><input id="emailInput" type="email" placeholder="Your email address" required><button class="btn primary">SUBSCRIBE</button></form></section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div><a class="brand footer-brand" href="#home"><img src="Logo.png"><span><b>MODULIFE</b><small>STORE</small></span></a><p>Redefining the Way You Live.</p><p class="muted">Beauty • Fashion • Personal Care • Lifestyle</p>
+
+        <!-- Social Media Icons -->
+        <div class="social-icons">
+          <a href="https://www.facebook.com/profile.php?id=61576256041315" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="https://www.instagram.com/modulife.offical?igsi=bjNxaGI5M3BueGI5" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="https://wa.me/923044637523" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+          </a>
+        </div>
+      </div>
+      <div><h4>SHOP</h4><a href="#shop">All Products</a><a href="#new">New Arrivals</a><a href="#deals">Deals & Offers</a><a href="#beauty">Beauty</a></div>
+      <div><h4>SUPPORT</h4><a href="#about">About Us</a><a href="#faq">FAQ</a><a href="#shipping">Shipping Policy</a><a href="#returns">Returns & Exchange</a><a href="#track">Track Order</a></div>
+      <div><h4>CONTACT</h4><p>Lahore, Pakistan</p>  <p>WhatsApp: <b>+92 304 4637523</b></p><a class="whatsapp-link" href="https://wa.me/923044637523" target="_blank">Message on WhatsApp →</a></div>
+    </div>
+    <div class="footer-bottom container">© 2026 Modulife Store. All Rights Reserved. <span>Made for customers across Pakistan.</span></div>
+  </footer>
+
+  <button class="floating-wa" onclick="openWhatsApp()">◔<span>Questions? WhatsApp us</span></button>
+
+  <div id="overlay" class="overlay" onclick="closeModal(event)">
+    <div id="modal" class="modal" onclick="event.stopPropagation()"></div>
+  </div>
+  
+  
+<script src="app.js"></script>
+
+<!-- Professional Cart Enhancement -->
+<script>
+(function(){
+  const modal = document.getElementById('modal');
+
+  function enhanceCart(){
+    if(!modal) return;
+
+    // Add a professional subtitle if the old cart does not have one.
+    const title = modal.querySelector('h2');
+    if(title && !modal.querySelector('.cart-subtitle')){
+      const sub = document.createElement('p');
+      sub.className = 'cart-subtitle';
+      sub.textContent = 'Here are your selected items';
+      title.insertAdjacentElement('afterend', sub);
+    }
+
+    // Convert existing image elements inside cart thumbnails into clean product thumbnails.
+    modal.querySelectorAll('.cart-thumb').forEach(thumb => {
+      const img = thumb.querySelector('img');
+      if(img){
+        img.style.width='100%';
+        img.style.height='100%';
+        img.style.objectFit='cover';
+      }
+    });
+  }
+
+  if(modal){
+    const observer = new MutationObserver(enhanceCart);
+    observer.observe(modal,{childList:true,subtree:true});
+  }
+
+  // Keep the existing cart functionality; only upgrade its presentation.
+  document.addEventListener('click', function(e){
+    if(e.target.closest('.cart-btn')){
+      setTimeout(enhanceCart,30);
+    }
+  });
+})();
+</script>
+
+
+  <!-- Dynamic Image Script -->
+  <script>
+    /* MODULIFE — dynamic product image handler */
+    (() => {
+      const setProductBackground = (container) => {
+        const img = container.querySelector('img');
+        if (!img) return;
+
+        const apply = () => {
+          const src = img.currentSrc || img.src;
+          if (src) container.style.setProperty('--product-bg', `url("${src.replace(/"/g, '\"')}")`);
+        };
+
+        if (img.complete) apply();
+        else img.addEventListener('load', apply, { once: true });
+      };
+
+      const scan = (root = document) => {
+        if (root.nodeType === 1 && root.matches('.product-img')) {
+          setProductBackground(root);
+        }
+        root.querySelectorAll?.('.product-img').forEach(setProductBackground);
+      };
+
+      scan();
+
+      const observer = new MutationObserver((mutations) => {
+        for (const mutation of mutations) {
+          mutation.addedNodes.forEach(node => {
+            if (node.nodeType === 1) scan(node);
+          });
+        }
+      });
+
+      observer.observe(document.body, { childList: true, subtree: true });
+    })();
+  </script>
+
+
+
+<!-- MODULIFE CART FINAL FIX: AUTO SELECTED PRODUCT IMAGE + FLAT DELIVERY -->
+<style>
+  #overlay .cart-thumb{
+    width:90px !important;
+    height:90px !important;
+    min-width:90px !important;
+    flex:0 0 90px !important;
+    border-radius:14px !important;
+    overflow:hidden !important;
+    background:#f5f1e9 !important;
+    display:flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+    border:1px solid #e8dfd0 !important;
+  }
+  #overlay .cart-thumb img{
+    width:100% !important;
+    height:100% !important;
+    object-fit:contain !important;
+    display:block !important;
+  }
+  #overlay .cart-thumb.has-product-image{
+    background:#fff !important;
+  }
+  #overlay .delivery-row{
+    display:flex !important;
+    align-items:center !important;
+    justify-content:flex-end !important;
+    gap:14px !important;
+    padding:0 0 12px !important;
+    color:#666 !important;
+    font-size:15px !important;
+  }
+  #overlay .delivery-row strong{color:#222 !important;}
+  @media(max-width:650px){
+    #overlay .cart-thumb{width:72px !important;height:72px !important;min-width:72px !important;flex-basis:72px !important;}
+    #overlay .delivery-row{font-size:14px !important;}
+  }
+</style>
+<script>
+(function(){
+  const DELIVERY_CHARGE = 250; // Flat Rs. 250 per order
+  const modal = document.getElementById('modal');
+  if(!modal) return;
+
+  const money = n => 'Rs. ' + Math.round(Number(n)||0).toLocaleString('en-PK');
+  const clean = s => (s || '').replace(/\s+/g,' ').trim().toLowerCase();
+
+ // Save exact selected product price for the WhatsApp order
+document.addEventListener('click', function (e) {
+
+    const button = e.target.closest(
+        '#productGrid button, #productGrid .btn, .product-grid button, .product-grid .btn'
+    );
+
+    if (!button) return;
+
+    const card = button.closest(
+        '.product-card, .product-item, .product, [data-product], [data-name]'
+    ) || button.parentElement;
+
+    if (!card) return;
+
+    // Get product name
+    const nameEl = card.querySelector(
+        'h2, h3, h4, .product-name, .name, [data-name]'
+    );
+
+    const name = nameEl
+        ? nameEl.textContent.trim()
+        : (card.getAttribute('data-name') || '').trim();
+
+    if (!name) return;
+
+    // Get product price
+    const priceEl = card.querySelector(
+        '.price, .product-price, [data-price]'
+    );
+
+    let rawPrice = '';
+
+    if (priceEl) {
+        rawPrice =
+            priceEl.getAttribute('data-price') ||
+            priceEl.textContent ||
+            '';
+    }
+
+    // Find Rs. price from the product card
+    const priceMatches = String(rawPrice).match(
+        /(?:Rs\.?|PKR)\s*[\d,]+(?:\.\d+)?/gi
+    ) || [];
+
+    let price = 0;
+
+    if (priceMatches.length) {
+        price = parseFloat(
+            priceMatches[priceMatches.length - 1]
+                .replace(/[^0-9.]/g, '')
+        );
+    }
+
+    // If price was not found in price element, search whole card
+    if (!price) {
+        const cardText = card.textContent || '';
+
+        const cardMatches = cardText.match(
+            /(?:Rs\.?|PKR)\s*[\d,]+(?:\.\d+)?/gi
+        ) || [];
+
+        if (cardMatches.length) {
+            price = parseFloat(
+                cardMatches[cardMatches.length - 1]
+                    .replace(/[^0-9.]/g, '')
+            );
+        }
+    }
+
+    // Save product price
+    if (price > 0) {
+        try {
+            const saved = JSON.parse(
+                sessionStorage.getItem('modulifeCartPrices') || '{}'
+            );
+
+            saved[cleanProductName(name)] = price;
+
+            sessionStorage.setItem(
+                'modulifeCartPrices',
+                JSON.stringify(saved)
+            );
+
+        } catch (err) {
+            console.error('Could not save product price:', err);
+        }
+    }
+
+}, true);
+
+
+// Clean product name so matching works correctly
+function cleanProductName(name) {
+    return String(name)
+        .toLowerCase()
+        .replace(/\s+/g, ' ')
+        .replace(/[^\w\s.-]/g, '')
+        .trim();
+}
+
+
+// Get saved product price
+function getSavedPrice(name) {
+
+    try {
+        const saved = JSON.parse(
+            sessionStorage.getItem('modulifeCartPrices') || '{}'
+        );
+
+        const key = cleanProductName(name);
+
+        // Exact match
+        if (saved[key] !== undefined) {
+            return Number(saved[key]);
+        }
+
+        // Partial match
+        for (const k of Object.keys(saved)) {
+
+            if (
+                k.includes(key) ||
+                key.includes(k)
+            ) {
+                return Number(saved[k]);
+            }
+        }
+
+    } catch (err) {
+        console.error('Could not get saved product price:', err);
+    }
+
+    return 0;
+}
+
+  // Save the exact image from the product card when the customer clicks Add to Cart.
+  // This is more reliable than trying to guess the image later from the cart text.
+  document.addEventListener('click', function(e){
+    const button = e.target.closest('#productGrid button, #productGrid .btn, .product-grid button, .product-grid .btn');
+    if(!button) return;
+
+    const card = button.closest('.product-card, .product-item, .product, [data-product], [data-name]') || button.parentElement;
+    if(!card) return;
+
+    const img = card.querySelector('img.product-img, .product-img img, img');
+    const src = img && (img.currentSrc || img.src);
+    const text = card.textContent || '';
+
+    // Find a useful product name from a heading/name element.
+    const nameEl = card.querySelector('h2,h3,h4,.product-name,.name,[data-name]');
+    const name = nameEl ? nameEl.textContent.trim() : text.trim().split(/Rs\.?\s*[\d,]+/i)[0].trim();
+
+    if(name && src){
+      try {
+        const saved = JSON.parse(sessionStorage.getItem('modulifeCartImages') || '{}');
+        saved[clean(name)] = src;
+        sessionStorage.setItem('modulifeCartImages', JSON.stringify(saved));
+      } catch(err) {}
+    }
+  }, true);
+
+  function getProductName(row){
+    const el = row.querySelector('h3,h4,.product-name,.cart-product-name,.name');
+    if(el && el.textContent.trim()) return el.textContent.trim();
+
+    const candidates = [...row.querySelectorAll('div,span,b,strong,p')];
+    const bad = /rs\.?\s*[\d,]+|quantity|total|[-+]/i;
+    const c = candidates.find(x => x.children.length === 0 && x.textContent.trim() && !bad.test(x.textContent));
+    return c ? c.textContent.trim() : '';
+  }
+
+  function getQty(row){
+    const q = row.querySelector('.qty span,.qty b,.qty .quantity,[data-quantity]');
+    if(q){
+      const n = parseInt(q.textContent || q.getAttribute('data-quantity'),10);
+      if(Number.isFinite(n)) return Math.max(1,n);
+    }
+    return 1;
+  }
+
+  function getUnitPrice(row){
+    const name = getProductName(row);
+
+    // 1. Use the exact price saved when the customer selected Add to Cart.
+    const savedPrice = getSavedPrice(name);
+    if(savedPrice > 0) return savedPrice;
+
+    // 2. Read common price/data attributes from the cart row.
+    const el = row.querySelector('.price,.cart-price,.product-price,.item-price,.unit-price,[data-price],[data-unit-price],[data-product-price],[class*=price]');
+    if(el){
+      const raw = [
+        el.textContent,
+        el.getAttribute('data-price'),
+        el.getAttribute('data-unit-price'),
+        el.getAttribute('data-product-price')
+      ].filter(Boolean).join(' ');
+      const matches = String(raw).match(/(?:Rs\.?\s*)?([0-9][0-9,]*(?:\.\d+)?)/gi) || [];
+      const nums = matches.map(x => parseFloat(x.replace(/[^0-9.]/g,'')))
+                          .filter(n => Number.isFinite(n) && n > 0);
+      if(nums.length) return nums[0];
+    }
+
+    // 3. IMPORTANT: read the actual Rs. price printed anywhere in the cart row.
+    // This handles carts where the price has no special CSS class.
+    const rowText = row.textContent || '';
+    const rsMatches = rowText.match(/Rs\.?\s*([0-9][0-9,]*(?:\.\d+)?)/gi) || [];
+    const rsValues = rsMatches.map(x => parseFloat(x.replace(/[^0-9.]/g,'')))
+                               .filter(n => Number.isFinite(n) && n > 0);
+    if(rsValues.length) return rsValues[0];
+
+    // 4. Check price attributes on the cart row itself.
+    const attrs = [
+      row.getAttribute('data-price'),
+      row.getAttribute('data-unit-price'),
+      row.getAttribute('data-product-price')
+    ].filter(Boolean).join(' ');
+    const attrMatches = attrs.match(/[0-9][0-9,]*(?:\.\d+)?/g) || [];
+    const attrValues = attrMatches.map(x => parseFloat(x.replace(/,/g,'')))
+                                   .filter(n => Number.isFinite(n) && n > 0);
+    return attrValues.length ? attrValues[0] : 0;
+  }
+
+  function getSavedImage(name){
+    try {
+      const saved = JSON.parse(sessionStorage.getItem('modulifeCartImages') || '{}');
+      const key = clean(name);
+      if(saved[key]) return saved[key];
+
+      // Fuzzy saved-name match.
+      for(const k of Object.keys(saved)){
+        if(k.includes(key) || key.includes(k)) return saved[k];
+      }
+    } catch(err) {}
+    return '';
+  }
+
+  function findProductImage(name){
+    const key = clean(name);
+    if(!key) return '';
+
+    // 1. Exact image remembered from the Add to Cart click.
+    const saved = getSavedImage(name);
+    if(saved) return saved;
+
+    // 2. Find an element anywhere on the page whose text contains the product name,
+    // then use its nearest image. This also works with dynamically-rendered cards.
+    const all = [...document.querySelectorAll('body *')];
+    for(const el of all){
+      if(el.children.length > 6) continue;
+      const text = clean(el.textContent);
+      if(!text || text.length > 180 || !text.includes(key)) continue;
+
+      const img = el.querySelector('img') || el.closest('.product-card,.product-item,.product,.mini-card')?.querySelector('img');
+      if(img && (img.currentSrc || img.src)) return img.currentSrc || img.src;
+    }
+
+    // 3. Match image alt/title.
+    for(const img of document.querySelectorAll('img')){
+      const t = clean((img.alt||'') + ' ' + (img.title||''));
+      if(t && (t.includes(key) || key.includes(t))) return img.currentSrc || img.src;
+    }
+
+    // 4. Fuzzy product-card match.
+    const words = key.split(/\s+/).filter(w => w.length > 2);
+    let best = '', score = 0;
+    for(const card of document.querySelectorAll('.product-card,.product-item,.product,.mini-card,[data-product],[data-name]')){
+      const img = card.querySelector('img');
+      if(!img) continue;
+      const text = clean(card.textContent + ' ' + (card.getAttribute('data-product')||'') + ' ' + (card.getAttribute('data-name')||''));
+      const sc = words.filter(w => text.includes(w)).length;
+      if(sc > score){ score = sc; best = img.currentSrc || img.src; }
+    }
+    return score >= 2 ? best : '';
+  }
+
+  function ensureImage(row){
+    const thumb = row.querySelector('.cart-thumb');
+    if(!thumb) return;
+
+    const name = getProductName(row);
+    let img = thumb.querySelector('img');
+    let src = img && (img.currentSrc || img.src);
+
+    // Replace placeholder/emoji thumbnail with the actual selected product image.
+    const found = findProductImage(name);
+    if(found && (!src || src.startsWith('data:') || src === window.location.href)) src = found;
+
+    if(src){
+      if(!img){
+        img = document.createElement('img');
+        thumb.innerHTML = '';
+        thumb.appendChild(img);
+      }
+      img.src = src;
+      img.alt = name || 'Selected product';
+      img.style.objectFit = 'contain';
+      thumb.classList.add('has-product-image');
+    }
+  }
+
+  function updateCart(){
+    const rows = [...modal.querySelectorAll('.cart-row')].filter(r => !r.classList.contains('delivery-row'));
+    if(!rows.length) return;
+
+    let subtotal = 0;
+    rows.forEach(row => {
+      ensureImage(row);
+      subtotal += getUnitPrice(row) * getQty(row);
+    });
+
+    // Delivery is exactly Rs. 250 for the whole order — not per item/quantity.
+    const delivery = DELIVERY_CHARGE;
+    let deliveryRow = modal.querySelector('.delivery-row');
+    if(!deliveryRow){
+      deliveryRow = document.createElement('div');
+      deliveryRow.className = 'delivery-row';
+      const total = modal.querySelector('.cart-total,.total-row');
+      if(total) total.parentNode.insertBefore(deliveryRow,total);
+    }
+
+    deliveryRow.innerHTML = '<span>Delivery Charges</span><strong>' + money(delivery) + '</strong>';
+
+    const total = modal.querySelector('.cart-total,.total-row');
+    if(total){
+      const strong = total.querySelector('strong');
+      if(strong) strong.textContent = money(subtotal + delivery);
+      const label = total.querySelector('span');
+      if(label) label.textContent = 'Grand Total:';
+    }
+
+    modal.dataset.subtotal = subtotal;
+    modal.dataset.delivery = delivery;
+    modal.dataset.grandTotal = subtotal + delivery;
+  }
+
+  function whatsappOrder(){
+  updateCart();
+
+  const rows = [...modal.querySelectorAll('.cart-row')]
+    .filter(r => !r.classList.contains('delivery-row'));
+
+  if(!rows.length) return;
+
+  let subtotal = 0;
+
+  const lines = rows.map(row => {
+    const name = getProductName(row) || 'Product';
+    const qty = getQty(row);
+    const price = Number(getUnitPrice(row)) || 0;
+    const lineTotal = price * qty;
+
+    subtotal += lineTotal;
+
+    return `• ${name} × ${qty}
+  Product Price: ${money(price)}
+  Product Total: ${money(lineTotal)}`;
+  });
+
+  const delivery = Number(DELIVERY_CHARGE) || 250;
+  const grandTotal = subtotal + delivery;
+
+  const message = `Hello Modulife Store 👋
+
+I would like to place the following order:
+
+🛍️ ORDER DETAILS
+
+${lines.join('\n\n')}
+
+Subtotal: ${money(subtotal)}
+Delivery Charges: ${money(delivery)}
+Grand Total: ${money(grandTotal)}
+
+📦 Please confirm my order and delivery details.
+
+Thank you for shopping with Modulife Store 💖;
+
+  window.open(
+    'https://wa.me/923044637523?text=' + encodeURIComponent(message),
+    '_blank'
+  );
+})();
+</script>
+</body>
+</html>
